@@ -13,9 +13,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.pedromateus.dscatalog.dto.ProductDTO;
+import com.pedromateus.dscatalog.entities.Category;
 import com.pedromateus.dscatalog.entities.Product;
 import com.pedromateus.dscatalog.exceptions.DataBaseException;
 import com.pedromateus.dscatalog.exceptions.ResourceNotFoundException;
+import com.pedromateus.dscatalog.repositories.CategoryRepository;
 import com.pedromateus.dscatalog.repositories.ProductRepository;
 
 @Service
@@ -23,6 +25,9 @@ public class ProductService {
 
 	@Autowired
 	private ProductRepository repository;
+	
+	@Autowired
+	private CategoryRepository categoryRepository;
 
 	@Transactional(readOnly = true)
 	public Page<ProductDTO> findAllPaged(PageRequest pageRequest) {
@@ -40,7 +45,7 @@ public class ProductService {
 	@Transactional
 	public ProductDTO insert(ProductDTO dto) {
 		Product entity = new Product();
-		entity.setName(dto.getName());
+		copyDtoEntity(dto,entity);
 		entity = repository.save(entity);
 		return new ProductDTO(entity);
 	}
@@ -67,5 +72,21 @@ public class ProductService {
 			throw new DataBaseException("INtegrity violation");
 		}
 
+	}
+	
+	private void copyDtoEntity(ProductDTO dto, Product entity) {
+		entity.setName(dto.getName());
+		entity.setDescription(dto.getDescription());
+		entity.setDate(dto.getDate());
+		entity.setImgUrl(dto.getImgUrl());
+		entity.setPrice(dto.getPrice());
+		
+		entity.getCategories().clear();
+		
+		dto.getCategories().forEach(catDto->{
+			Category category=categoryRepository.getOne(catDto.getId());
+			entity.getCategories().add(category)
+;		});
+		
 	}
 }
