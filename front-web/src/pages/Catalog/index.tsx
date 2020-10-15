@@ -4,24 +4,25 @@ import ProductCard from './components/ProductCard'
 import ProductCardLoader from './components/Loader/ProductCardLoader'
 import { Link } from 'react-router-dom';
 import { makeRequest } from 'core/utils/request';
-import { url } from 'inspector';
 import { ProductResponse } from 'core/types/Product';
+import Pagination from 'core/components/Pagination';
 
 
 
 const Catalog=()=>{
 
-    //Popular um estado no componente e listar os produtos dinâmincamente
+    
     const [productResponse, setProductResponse]=useState<ProductResponse>()
     console.log(productResponse);
     const[isLoading, setIsLoading]=useState(false);
+    const [activePage, setActivePage]=useState(0)
 
     
     useEffect(()=>{
 
         const params={
-            page:0,
-            linesPerPage:12
+            page:activePage,
+            linesPerPage:5
         };
         setIsLoading(true)
         makeRequest({url:"/products",params})
@@ -29,7 +30,7 @@ const Catalog=()=>{
         .finally(()=>{
             setIsLoading(false)
         })
-    },[])
+    },[activePage])
 
     return (
     <div className="catalog-container">
@@ -41,6 +42,11 @@ const Catalog=()=>{
             ))}
            
         </div>
+        {productResponse&&<Pagination 
+        totalPages={productResponse.totalPages}
+        activePage={activePage}
+        onChange={page=>setActivePage(page)}
+        />}
     </div>
 )}; 
 
