@@ -15,6 +15,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.pedromateus.dscatalog.dto.UserDTO;
 import com.pedromateus.dscatalog.dto.UserInsertDTO;
+import com.pedromateus.dscatalog.dto.UserUpdateDTO;
 import com.pedromateus.dscatalog.entities.Role;
 import com.pedromateus.dscatalog.entities.User;
 import com.pedromateus.dscatalog.exceptions.DataBaseException;
@@ -57,7 +58,7 @@ public class UserService {
 	}
 
 	@Transactional
-	public UserDTO update(Long id, UserDTO dto) {
+	public UserDTO update(Long id, UserUpdateDTO dto) {
 		try {
 			User entity = userRepository.getOne(id);
 			copyDtoEntity(dto,entity);
