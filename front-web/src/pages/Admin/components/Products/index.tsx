@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import BaseForm from '../BaseForm';
+import Form from './Form';
 
 const Products=()=>{
     return (
@@ -19,13 +20,7 @@ const Products=()=>{
                     <h1>Exibir a listagem de produtos</h1>
                 </Route>
                 <Route path="/admin/products/create">
-                    <BaseForm title="cadastrar um produto">
-                        <div className="row">
-                            <div className="col-6">
-                                <input type="text" className="form-control"/>
-                            </div>
-                        </div>
-                    </BaseForm>
+                    <Form/>
                 </Route>
                 <Route path="/admin/products/:productId">
                     
