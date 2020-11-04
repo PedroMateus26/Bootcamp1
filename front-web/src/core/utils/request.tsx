@@ -22,7 +22,6 @@ axios.interceptors.response.use(response=>response,error=>{
     if(error.response.status===401)
         history.push('/admin/auth/login')
         //console.log('Redirecionar para login');
-        
     return Promise.reject(error);
 });
 
