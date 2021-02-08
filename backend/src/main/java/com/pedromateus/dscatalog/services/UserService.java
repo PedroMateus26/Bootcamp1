@@ -81,7 +81,7 @@ public class UserService implements UserDetailsService {
 		try {
 			userRepository.deleteById(id);
 		} catch (EmptyResultDataAccessException e) {
-			throw new ResourceNotFoundException("Id not foound" + id);
+			throw new ResourceNotFoundException("Id not found" + id);
 		} catch (DataIntegrityViolationException e) {
 			throw new DataBaseException("Integrity violation");
 		}

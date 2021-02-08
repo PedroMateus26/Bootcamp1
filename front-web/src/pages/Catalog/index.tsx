@@ -22,7 +22,7 @@ const Catalog=()=>{
 
         const params={
             page:activePage,
-            linesPerPage:5
+            linesPerPage:10
         };
         setIsLoading(true)
         makeRequest({url:"/products",params})

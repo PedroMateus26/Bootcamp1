@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="83d99946-f94b-4b2f-9aa3-be98fb63d60d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/pedromateus/dscatalog/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/pedromateus/dscatalog/services/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/java/com/pedromateus/dscatalog/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/java/com/pedromateus/dscatalog/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/components/ButtonIcon/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/components/ButtonIcon/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/components/Navbar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/components/Navbar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/core/components/Navbar/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/components/Navbar/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1nO50fMGIYeFcfuNHXKvNrMJUAp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="83d99946-f94b-4b2f-9aa3-be98fb63d60d" name="Default Changelist" comment="" />
+      <created>1611248103079</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1611248103079</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

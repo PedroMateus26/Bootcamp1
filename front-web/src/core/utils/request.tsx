@@ -34,7 +34,7 @@ export const makeRequest=({method='GET',url,data,params,headers}:RequestParams)=
         data,
         params,
         headers
-    }).catch(erro=>Promise.resolve(erro));
+    })//.catch(erro=>Promise.resolve(erro));
 }
 
 export const makePrivateRequest=({method='GET',url,data,params}:RequestParams)=>{
