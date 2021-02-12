@@ -1,6 +1,6 @@
 import axios,{Method} from 'axios';
 import qs from 'qs';
-import { CLIENT_ID, CLIENT_SECRET, getSessionData } from './auth';
+import { CLIENT_ID, CLIENT_SECRET, getSessionData, logout } from './auth';
 import history from './history';
 
 type RequestParams={
@@ -20,8 +20,7 @@ const BASE_URL='http://localhost:8080';
 
 axios.interceptors.response.use(response=>response,error=>{
     if(error.response.status===401)
-        history.push('/admin/auth/login')
-        //console.log('Redirecionar para login');
+        logout();
     return Promise.reject(error);
 });
 

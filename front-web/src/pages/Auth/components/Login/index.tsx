@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { makeLogin } from "core/utils/request";
 import { SaveSessionData } from "core/utils/auth";
 
-type FormData = {
+type FormSate = {
   username: string;
   password: string;
 };
@@ -17,14 +17,14 @@ type LocationSate={
 }
 
 const Login = () => {
-  const { register, handleSubmit, errors } = useForm<FormData>();
+  const { register, handleSubmit, errors } = useForm<FormSate>();
   const [hasError, setHasError] = useState(false);
   const history = useHistory();
   const location=useLocation<LocationSate>();
 
   const { from } = location.state || { from: { pathname: "/admin" } };
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (data: FormSate) => {
     makeLogin(data)
       .then((response) => {
         setHasError(false);
@@ -76,7 +76,7 @@ const Login = () => {
           )}
         </div>
 
-        <Link to="/admin/auth/recover" className="login-link-recover">
+        <Link to="/auth/recover" className="login-link-recover">
           Esqueci a senha?
         </Link>
         <div className="login-submmit">
@@ -84,7 +84,7 @@ const Login = () => {
         </div>
         <div className="text-center">
           <span className="not-registered">Não tem Cadastro?</span>
-          <Link to="/admin/auth/register" className="login-link-register">
+          <Link to="/auth/register" className="login-link-register">
             Cadastrar
           </Link>
         </div>
