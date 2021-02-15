@@ -3,6 +3,8 @@ import { makePrivateRequest } from "core/utils/request";
 import BaseForm from "../../BaseForm";
 import "./styles.scss";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import history from "core/utils/history";
 
 type FormState = {
   name: string;
@@ -15,7 +17,14 @@ const Form = () => {
   const { register, handleSubmit, errors } = useForm<FormState>();
 
   const onSubmit = (data: FormState) => {
-    makePrivateRequest({ url: "/products", method: "POST", data });
+    makePrivateRequest({ url: "/products", method: "POST", data })
+    .then(()=>{
+      toast.info('Produto salvo com sucesso!');
+      history.push('/admin/products');
+    })
+    .catch(()=>{
+      toast.error('Erro ao salvar produto!');
+    });
   };
 
   return (
@@ -44,7 +53,10 @@ const Form = () => {
             </div>
             <div className="margin-bottom-30">
               <input
-                ref={register({ required: "Campo obrigatório" })}
+                ref={register({
+                   required: "Campo obrigatório",
+                    
+                  })}
                 type="text"
                 name="price"
                 className="form-control  input-base"
