@@ -13,7 +13,6 @@ const Catalog=()=>{
 
     
     const [productResponse, setProductResponse]=useState<ProductResponse>()
-    console.log(productResponse);
     const[isLoading, setIsLoading]=useState(false);
     const [activePage, setActivePage]=useState(0)
 
